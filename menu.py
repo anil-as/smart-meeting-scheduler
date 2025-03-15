@@ -2,7 +2,7 @@ import datetime
 from scheduler import Scheduler
 
 def main():
-    scheduler = Scheduler(holidays=[datetime.date(2025, 1, 1), datetime.date(2025, 12, 25)])
+    scheduler = Scheduler(holidays=[datetime.date(2025, 4, 18), datetime.date(2025, 12, 25)])
 
     while True:
         print("\nSmart Meeting Scheduler")
@@ -18,7 +18,6 @@ def main():
             date_str = input("Enter date (YYYY-MM-DD): ")
             start_hour = int(input("Enter start hour (24-hour format): "))
             end_hour = int(input("Enter end hour (24-hour format): "))
-            
             date = datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
             print(scheduler.schedule_meeting(user, date, start_hour, end_hour))
 
@@ -35,8 +34,7 @@ def main():
             print("Your scheduled meetings:", meetings if meetings else "No meetings scheduled.")
 
         elif choice == "4":
-            print("Exiting... Goodbye!")
+            print("Exiting")
             break
-
         else:
             print("Invalid choice. Please try again.")
